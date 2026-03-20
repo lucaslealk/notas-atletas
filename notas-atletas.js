@@ -2,14 +2,13 @@ function boletimGeral() {
    let resultados = [];
 
   atletas.forEach((atleta) => {
-    let notasOrdenadas = [...atleta.notas].sort((a, b) => a - b);
+    let notasComp = [...atleta.notas].sort((a, b) => a - b);
 
-    notasOrdenadas.shift();
-    notasOrdenadas.pop();
+    notasComp = notasComp.slice(1, 4);
 
-    let soma = notasOrdenadas.reduce((acc, nota) => acc + nota, 0);
+    let soma = notasComp.reduce((acc, nota) => acc + nota, 0);
 
-    let media = soma / notasOrdenadas.length;
+    let media = soma / notasComp.length;
 
     resultados.push({nome: atleta.nome, notas: atleta.notas.sort((a, b) => a - b), media: media.toFixed(2) });
   });
