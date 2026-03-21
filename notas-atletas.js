@@ -10,7 +10,7 @@ function boletimGeral() {
 
     let media = soma / notasComp.length;
 
-    resultados.push({nome: atleta.nome, notas: atleta.notas.sort((a, b) => a - b), media: media.toFixed(2) });
+    resultados.push({nome: atleta.nome, notas: atleta.notas.sort(), media: media.toFixed(2) });
   });
   return resultados;
 }
